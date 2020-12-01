@@ -1,0 +1,12 @@
+---
+- name: dnf tasks 
+  become: yes
+  import_tasks: dnf.yml
+  tags: 
+    - dnf
+
+- name: flatpak tasks 
+  become: yes
+  import_tasks: flatpak.yml
+  tags: 
+    - flatpak

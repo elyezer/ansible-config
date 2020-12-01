@@ -1,0 +1,10 @@
+---
+- name: Install pipx packages 
+  command: "pipx install {{ item }}"
+  loop:
+    - ansible-lint
+    - black
+    - docker-compose
+    - httpie
+    - tldr
+    - youtube-dl

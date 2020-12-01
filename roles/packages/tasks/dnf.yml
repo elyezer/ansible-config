@@ -1,0 +1,35 @@
+---
+- name: Import RPM Fusion RPM GPG keys
+  rpm_key:
+    state: present
+    key: "{{ item }}"
+  loop:
+    - https://rpmfusion.org/keys?action=AttachFile&do=get&target=RPM-GPG-KEY-rpmfusion-free-fedora-{{ ansible_date_time.year }}
+    - https://rpmfusion.org/keys?action=AttachFile&do=get&target=RPM-GPG-KEY-rpmfusion-nonfree-fedora-{{ ansible_date_time.year }}
+
+- name: Add RPM Fusion repos
+  dnf:
+    state: present
+    name:
+      - https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-{{ ansible_distribution_version }}.noarch.rpm
+      - https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-{{ ansible_distribution_version }}.noarch.rpm
+
+- name: Upgrade all packages
+  dnf:
+    name: "*"
+    state: latest
+
+- name: Install DNF packages
+  dnf:
+    name:
+      - fira-code-fonts
+      - fzf
+      - git
+      - gnome-tweaks
+      - kitty
+      - neovim
+      - pipx
+      - python3-neovim
+      - ripgrep
+      - util-linux-user  # provides chsh
+      - zsh
