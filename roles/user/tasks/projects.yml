@@ -1,0 +1,19 @@
+- name: Create projects directory structure
+  file:
+    path: "{{ item }}"
+    state: directory
+    mode: "0755"
+  loop:
+    - "~/code"
+    - "~/code/ansible"
+    - "~/code/satelliteqe"
+
+- name: Clone projects
+  git:
+    repo: "{{ item.repo }}"
+    dest: "{{ item.dest }}"
+  loop:
+    - repo: "git@github.com:elyezer/awx.git"
+      dest: "~/code/ansible/awx"
+    - repo: "git@github.com:SatelliteQE/betelgeuse.git"
+      dest: "~/code/satelliteqe/betelgeuse"

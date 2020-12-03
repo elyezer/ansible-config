@@ -1,20 +1,25 @@
 ---
-- name: git tasks 
+- name: git tasks
   import_tasks: git.yml
-  tags: 
+  tags:
     - git
 
-- name: pipx tasks 
+- name: pipx tasks
   import_tasks: pipx.yml
-  tags: 
+  tags:
     - pipx
 
-- name: oh-my-zsh tasks 
+- name: oh-my-zsh tasks
   import_tasks: oh-my-zsh.yml
-  tags: 
+  tags:
     - oh-my-zsh
 
-- name: nvim tasks 
+- name: nvim tasks
   import_tasks: nvim.yml
-  tags: 
+  tags:
     - nvim
+
+- name: projects tasks
+  import_tasks: projects.yml
+  tags:
+    - projects
