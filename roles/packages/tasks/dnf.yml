@@ -28,6 +28,7 @@
       - gnome-tweaks
       - kitty
       - neovim
+      - npm
       - pipx
       - python3-neovim
       - ripgrep

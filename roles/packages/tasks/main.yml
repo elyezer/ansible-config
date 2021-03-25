@@ -1,12 +1,18 @@
 ---
-- name: dnf tasks 
+- name: dnf tasks
   become: yes
   import_tasks: dnf.yml
-  tags: 
+  tags:
     - dnf
 
-- name: flatpak tasks 
+- name: flatpak tasks
   become: yes
   import_tasks: flatpak.yml
-  tags: 
+  tags:
     - flatpak
+
+- name: npm tasks
+  become: yes
+  import_tasks: npm.yml
+  tags:
+    - npm

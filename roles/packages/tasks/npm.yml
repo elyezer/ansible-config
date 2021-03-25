@@ -1,0 +1,9 @@
+- name: Install NPM packages
+  npm:
+    name: "{{ item }}"
+    global: yes
+  loop:
+    - bash-language-server
+    - dockerfile-language-server-nodejs
+    - pyright
+    - vim-language-server
