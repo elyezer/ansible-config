@@ -4,6 +4,8 @@
     global: yes
   loop:
     - bash-language-server
+    - bash-language-server
     - dockerfile-language-server-nodejs
     - pyright
     - vim-language-server
+    - yaml-language-server
