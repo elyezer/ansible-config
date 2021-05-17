@@ -32,5 +32,6 @@
       - pipx
       - python3-neovim
       - ripgrep
+      - tmux
       - util-linux-user  # provides chsh
       - zsh
